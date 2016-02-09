@@ -105,10 +105,10 @@ public class MainPanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		if(b.getX() + b.getWidth() >= this.getWidth() ||
 				b.getX() <= 0) {
-				b.setDeltaX(b.getDeltax() *= -1);
+				b.setDeltaX(b.getDeltaX() *= -1);
 			}
 			if(b.getY() + b.getHeight() >= this.getHeight() || b.getY() <= 0) {
-				b.setDeltaY(b.getDeltay()*= -1); 
+				b.setDeltaY(b.getDeltaY()*= -1); 
 			}
 			b.getX() += b.getDeltax;
 			b.setY(b.getY() += b.getDeltay);

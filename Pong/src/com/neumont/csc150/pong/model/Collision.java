@@ -50,10 +50,10 @@ public class Collision {
 
 	public void setBoundary(int xMax, int yMax, Ball entity) {
 		if (entity.getX() > xMax + 1) {
-			entity.setDeltaX(entity.getDeltax() * -1);
+			entity.setDeltaX(entity.getDeltaX() * -1);
 		}
 		if (entity.getY() > yMax + 1) {
-			entity.setDeltaY(entity.getDeltay() * -1);
+			entity.setDeltaY(entity.getDeltaY() * -1);
 		}
 	}
 }

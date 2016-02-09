@@ -27,19 +27,19 @@ public class Entity {
 		this.width = width;
 	}
 
-	public int getDx() {
+	public int getDeltaX() {
 		return dx;
 	}
 
-	public void setDx(int dx) {
+	public void setDeltaX(int dx) {
 		this.dx = dx;
 	}
 
-	public int getDy() {
+	public int getDeltaY() {
 		return dy;
 	}
 
-	public void setDy(int dy) {
+	public void setDeltaY(int dy) {
 		this.dy = dy;
 	}
 

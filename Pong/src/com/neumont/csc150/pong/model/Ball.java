@@ -6,7 +6,7 @@ public class Ball extends Entity {
 		setWidth(10);
 		setX(245);
 		setY(245);
-		setDx(0);
-		setDy(5);
+		setDeltaX(0);
+		setDeltaY(5);
 	}
 }

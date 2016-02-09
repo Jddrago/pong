@@ -11,7 +11,7 @@ public class Collision {
 	}
 
 	public boolean checkNorth(Entity e1, Entity e3) {
-		if (e1.getY() <= e3.getY() + e3.getHeight()) {
+		if (e1.getY() <= e3.getY()) {
 
 			if (e1.getX() + e1.getWidth() >= e3.getX() && e3.getX() + e3.getWidth() >= e1.getX()) {
 				return true;
@@ -44,16 +44,16 @@ public class Collision {
 
 	public void setBoundary(int xMax, int yMax, Paddle entity) {
 		if (entity.getX() > xMax + 1 || entity.getX() + entity.getWidth() < 10) {
-			entity.setDeltax(0);
+			entity.setDeltaX(0);
 		}
 	}
 
 	public void setBoundary(int xMax, int yMax, Ball entity) {
 		if (entity.getX() > xMax + 1) {
-			entity.setDeltax(entity.getDeltax() * -1);
+			entity.setDeltaX(entity.getDeltax() * -1);
 		}
 		if (entity.getY() > yMax + 1) {
-			entity.setDeltay(entity.getDeltay() * -1);
+			entity.setDeltaY(entity.getDeltay() * -1);
 		}
 	}
 }

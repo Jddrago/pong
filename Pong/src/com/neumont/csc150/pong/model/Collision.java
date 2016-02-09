@@ -2,16 +2,18 @@ package com.neumont.csc150.pong.model;
 
 public class Collision {
 
-	public boolean isCollision(Entity entity1, Entity entity2, Entity entity3) {
-		if (checkNorth(entity1, entity3) || checkSouth(entity1, entity2))
+	public boolean isCollision(Entity e1, Entity e2, Entity e3) {
+		if (checkNorth(e1, e3) || checkSouth(e1, e2)) {
 			return true;
-		else
+		} else {
 			return false;
+		}
 	}
 
-	public boolean checkNorth(Entity entity1, Entity entity3) {
-		if (entity1.getY() <= entity3.getY()) {
-			if (entity1.getX() + entity1.getWidth() >= entity3.getX() && entity3.getX() + entity3.getWidth() >= entity1.getX()) {
+	public boolean checkNorth(Entity e1, Entity e3) {
+		if (e1.getY() <= e3.getY()) {
+
+			if (e1.getX() + e1.getWidth() >= e3.getX() && e3.getX() + e3.getWidth() >= e1.getX()) {
 				return true;
 			} else {
 				return false;
@@ -20,9 +22,10 @@ public class Collision {
 		return false;
 	}
 
-	public boolean checkSouth(Entity entity1, Entity entity2) {
-		if (entity1.getY() >= entity2.getY() + entity2.getHeight()) {
-			if (entity1.getX() + entity1.getWidth() >= entity2.getX() && entity2.getX() + entity2.getWidth() >= entity1.getX()) {
+	public boolean checkSouth(Entity e1, Entity e2) {
+		if (e1.getY() + e1.getHeight() >= e2.getY()) {
+
+			if (e1.getX() + e1.getWidth() >= e2.getX() && e2.getX() + e2.getWidth() >= e1.getX()) {
 				return true;
 			} else {
 				return false;
@@ -31,25 +34,26 @@ public class Collision {
 		return false;
 	}
 
-	public void checkWest(Entity entity1, Entity entity2) {
+	public void checkWest(Entity e1, Entity e2) {
+//		don't remember if anything is needed here or not.
 	}
 
-	public void checkEast(Entity entity1, Entity entity2) {
+	public void checkEast(Entity e1, Entity e2) {
+
 	}
 
 	public void setBoundary(int xMax, int yMax, Paddle entity) {
 		if (entity.getX() > xMax + 1 || entity.getX() + entity.getWidth() < 10) {
-			entity.setDx(0);
+			entity.setDeltaX(0);
 		}
 	}
 
 	public void setBoundary(int xMax, int yMax, Ball entity) {
 		if (entity.getX() > xMax + 1) {
-			entity.setDx(entity.getDx() * -1);
+			entity.setDeltaX(entity.getDeltaX() * -1);
 		}
 		if (entity.getY() > yMax + 1) {
-			entity.setDy(entity.getDy() * -1);
+			entity.setDeltaY(entity.getDeltaY() * -1);
 		}
 	}
-	// public void
 }

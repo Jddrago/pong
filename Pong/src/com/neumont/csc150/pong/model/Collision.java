@@ -10,9 +10,8 @@ public class Collision {
 	}
 
 	public boolean checkNorth(Entity entity1, Entity entity3) {
-		if (entity1.getY() <= entity3.getY() + entity3.getHeight()) {
-			if (entity1.getX() + entity1.getWidth() >= entity3.getX()
-					&& entity3.getX() + entity3.getWidth() >= entity1.getX()) {
+		if (entity1.getY() <= entity3.getY()) {
+			if (entity1.getX() + entity1.getWidth() >= entity3.getX() && entity3.getX() + entity3.getWidth() >= entity1.getX()) {
 				return true;
 			} else {
 				return false;
@@ -22,9 +21,8 @@ public class Collision {
 	}
 
 	public boolean checkSouth(Entity entity1, Entity entity2) {
-		if (entity1.getY() + entity1.getHeight() >= entity2.getY()) {
-			if (entity1.getX() + entity1.getWidth() >= entity2.getX()
-					&& entity2.getX() + entity2.getWidth() >= entity1.getX()) {
+		if (entity1.getY() >= entity2.getY() + entity2.getHeight()) {
+			if (entity1.getX() + entity1.getWidth() >= entity2.getX() && entity2.getX() + entity2.getWidth() >= entity1.getX()) {
 				return true;
 			} else {
 				return false;

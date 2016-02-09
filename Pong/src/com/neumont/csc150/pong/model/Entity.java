@@ -2,9 +2,12 @@ package com.neumont.csc150.pong.model;
 
 public class Entity {
 	
-	private int x, y;
-	private int height, width;
-	private int deltaX, deltaY;
+	private int x;
+	private int y;
+	private int height;
+	private int width;
+	private int deltaX;
+	private int deltaY;
 	
 	public int getX() {
 		return x;
